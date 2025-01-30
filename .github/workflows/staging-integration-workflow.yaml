@@ -20,6 +20,10 @@ jobs:
   bugFix-test-job:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          ref: ${{github.event.pull_request.head.ref}}
       - name: Run Unit Tests (Jest)
         run: npm test -- --coverage
       - name: Run ESLint (Code Quality Check)
