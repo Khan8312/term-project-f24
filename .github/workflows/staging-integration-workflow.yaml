@@ -24,6 +24,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{github.event.pull_request.head.ref}}
+      - name: install dependency 
+        run: npm install
       - name: Run Unit Tests (Jest)
         run: npm test -- --coverage
       - name: Run ESLint (Code Quality Check)
