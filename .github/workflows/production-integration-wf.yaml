@@ -4,7 +4,7 @@ on:
     branches:
       - main
 jobs:
-  Production-linting-job:
+  production-linting:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -15,7 +15,7 @@ jobs:
         run: |
           npx htmlhint "**/*.html"
           npx stylelint "**/*.css"
-  Production-build-job:
+  production-build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
